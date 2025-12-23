@@ -66,34 +66,33 @@ export function Footer() {
     }
 
     return (
-        <footer className="bg-[#020804] border-t border-white/5 pt-16 pb-8 px-6 relative z-30">
+        <footer className="bg-[#020804] border-t border-white/5 py-10 px-6 relative z-30">
             <div className="max-w-7xl mx-auto">
 
-                {/* Main Footer Content */}
-                <div className="grid md:grid-cols-5 gap-12 mb-16">
+                {/* Main Footer Content - Logo and Links aligned */}
+                <div className="grid md:grid-cols-5 gap-8 mb-8">
 
-                    {/* Logo */}
+                    {/* Logo + Description */}
                     <div className="md:col-span-2">
                         <Image
                             src="/finlot-logo.png"
                             alt="Finlot"
-                            width={400}
-                            height={120}
-                            className="h-20 md:h-40 w-auto object-contain mb-6"
+                            width={200}
+                            height={60}
+                            className="h-10 w-auto object-contain mb-4"
                         />
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                             Your trusted partner for instant loans and comprehensive insurance solutions.
-                            Empowering 40,000+ Indians to achieve financial freedom.
                         </p>
                     </div>
 
-                    {/* Link Columns */}
+                    {/* Link Columns - aligned with logo */}
                     {Object.entries(footerLinks).map(([category, links]) => (
                         <div key={category}>
-                            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                            <h4 className="text-white font-semibold mb-3 text-sm uppercase tracking-wider">
                                 {category}
                             </h4>
-                            <ul className="space-y-3">
+                            <ul className="space-y-2">
                                 {links.map((link) => (
                                     <li key={link.label}>
                                         <Link
@@ -109,47 +108,25 @@ export function Footer() {
                     ))}
                 </div>
 
-                {/* Email Signup + Social */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 py-8 border-t border-white/5">
-
-                    {/* Email Signup */}
-                    <div className="w-full md:w-auto">
-                        <p className="text-white font-medium mb-3">Stay Updated</p>
-                        <div className="flex gap-2">
-                            <div className="relative">
-                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#acf350]/50 w-64"
-                                />
-                            </div>
-                            <button className="bg-[#acf350] text-black px-5 py-3 font-semibold hover:bg-[#9be040] transition-colors">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="flex items-center gap-4">
-                        <span className="text-gray-400 text-sm mr-2">Follow us</span>
-                        <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#acf350]/20 hover:border-[#acf350]/50 transition-all">
-                            <Twitter className="w-4 h-4 text-gray-400 hover:text-[#acf350]" />
-                        </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#acf350]/20 hover:border-[#acf350]/50 transition-all">
-                            <Linkedin className="w-4 h-4 text-gray-400 hover:text-[#acf350]" />
-                        </a>
-                        <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#acf350]/20 hover:border-[#acf350]/50 transition-all">
-                            <Instagram className="w-4 h-4 text-gray-400 hover:text-[#acf350]" />
-                        </a>
-                    </div>
-                </div>
-
-                {/* Bottom Bar */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
+                {/* Bottom Bar with Social */}
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/5">
                     <p className="text-gray-500 text-sm">
                         © 2024 Finlot. All rights reserved. Made with ❤️ in India
                     </p>
+
+                    {/* Social Links */}
+                    <div className="flex items-center gap-3">
+                        <a href="#" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#acf350]/20 hover:border-[#acf350]/50 transition-all">
+                            <Twitter className="w-3.5 h-3.5 text-gray-400" />
+                        </a>
+                        <a href="#" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#acf350]/20 hover:border-[#acf350]/50 transition-all">
+                            <Linkedin className="w-3.5 h-3.5 text-gray-400" />
+                        </a>
+                        <a href="#" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#acf350]/20 hover:border-[#acf350]/50 transition-all">
+                            <Instagram className="w-3.5 h-3.5 text-gray-400" />
+                        </a>
+                    </div>
+
                     <div className="flex gap-6 text-sm text-gray-500">
                         <Link href="#" className="hover:text-[#acf350] transition-colors">Terms & Conditions</Link>
                         <Link href="#" className="hover:text-[#acf350] transition-colors">Privacy Policy</Link>
