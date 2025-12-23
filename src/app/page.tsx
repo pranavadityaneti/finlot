@@ -42,7 +42,7 @@ export default function Home() {
             alt="Finlot"
             width={400}
             height={120}
-            className="h-28 md:h-40 w-auto object-contain"
+            className="h-12 md:h-16 w-auto object-contain"
             priority
           />
         </div>
