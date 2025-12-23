@@ -20,7 +20,7 @@ export const AboutSection = () => {
                 {/* Top Row */}
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* Headline */}
-                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-[0.95] max-w-xl">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[0.95] max-w-xl">
                         We Translate <br />
                         <span className="relative inline-block px-[5.5px] whitespace-nowrap">
                             <motion.span
