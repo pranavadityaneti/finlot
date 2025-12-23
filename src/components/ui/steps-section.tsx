@@ -2,164 +2,213 @@
 
 import React from "react"
 import { motion } from "motion/react"
-import { FileText, ShieldCheck, Wallet, ClipboardList, Building2, CheckCircle2, Banknote } from "lucide-react"
+import {
+    FileText,
+    ShieldCheck,
+    Wallet,
+    ClipboardList,
+    Building2,
+    CheckCircle2,
+    Banknote,
+    CreditCard,
+    PiggyBank,
+    Receipt
+} from "lucide-react"
 
 export const StepsSection = () => {
     const steps = [
         {
             icon: ClipboardList,
             title: "Apply Online",
-            description: "Fill a quick form with basic details. No paperwork, no queues.",
-            color: "#acf350", // Neon Lime
+            description: "Fill a quick form with basic details. No paperwork, no queues. Get started in under 2 minutes with our streamlined application process.",
         },
         {
             icon: ShieldCheck,
             title: "Quick Verification",
-            description: "Our AI verifies your documents in minutes, not days.",
-            color: "#60a5fa", // Blue
+            description: "Our AI verifies your documents in minutes, not days. Secure, fast, and completely digital. No branch visits required.",
         },
         {
             icon: Wallet,
             title: "Receive Funds",
-            description: "Approved loans are disbursed directly to your bank account.",
-            color: "#f97316", // Orange
+            description: "Approved loans are disbursed directly to your bank account within 24 hours. Track your application status in real-time.",
         },
     ]
 
     const floatingIcons = [
-        { Icon: FileText, x: "10%", y: "5%", delay: 0 },
-        { Icon: Building2, x: "25%", y: "0%", delay: 0.1 },
-        { Icon: CheckCircle2, x: "50%", y: "3%", delay: 0.2 },
-        { Icon: Banknote, x: "75%", y: "0%", delay: 0.3 },
-        { Icon: ClipboardList, x: "90%", y: "5%", delay: 0.4 },
+        { Icon: FileText, offset: -60 },
+        { Icon: Building2, offset: -40 },
+        { Icon: CreditCard, offset: -20 },
+        { Icon: PiggyBank, offset: 0 },
+        { Icon: Receipt, offset: 20 },
+        { Icon: Banknote, offset: 40 },
+        { Icon: CheckCircle2, offset: 60 },
     ]
 
     return (
-        <section className="w-full bg-white text-black py-24 px-6 md:px-12 relative overflow-hidden">
-            <div className="max-w-6xl mx-auto flex flex-col items-center gap-16">
+        <section className="w-full bg-white text-black py-16 px-6 md:px-12 relative overflow-hidden">
+            <div className="max-w-5xl mx-auto flex flex-col items-center gap-10">
 
-                {/* Floating Icons */}
-                <div className="relative w-full h-20 mb-4">
-                    {floatingIcons.map(({ Icon, x, y, delay }, index) => (
+                {/* Clustered Overlapping Icons */}
+                <div className="relative flex items-center justify-center h-14">
+                    {floatingIcons.map(({ Icon, offset }, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 0.6, y: 0 }}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 0.4, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
                             className="absolute"
-                            style={{ left: x, top: y }}
+                            style={{
+                                left: `calc(50% + ${offset}px)`,
+                                transform: 'translateX(-50%)',
+                                zIndex: floatingIcons.length - index
+                            }}
                         >
-                            <Icon className="w-10 h-10 text-gray-300" strokeWidth={1.5} />
+                            <Icon className="w-10 h-10 text-gray-300" strokeWidth={1} />
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Headline */}
                 <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-4xl md:text-5xl font-medium text-center italic max-w-3xl leading-tight"
+                    transition={{ duration: 0.5 }}
+                    className="text-3xl md:text-4xl font-medium text-center max-w-2xl leading-tight"
                 >
-                    Your loan journey,{" "}
-                    <span className="not-italic font-bold">simplified.</span>
+                    <span className="italic">Your loan journey,</span>{" "}
+                    <span className="font-bold not-italic">simplified.</span>
                 </motion.h2>
 
-                {/* Step Cards */}
-                <div className="grid md:grid-cols-3 gap-8 w-full">
+                {/* Minimal Step Cards */}
+                <div className="grid md:grid-cols-3 gap-6 w-full">
                     {steps.map((step, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
-                            className="relative bg-gray-50 rounded-2xl p-6 border-l-4"
-                            style={{ borderLeftColor: step.color }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className="bg-white border border-gray-200 rounded-2xl p-5"
                         >
-                            <div
-                                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                                style={{ backgroundColor: `${step.color}20` }}
-                            >
-                                <step.icon className="w-5 h-5" style={{ color: step.color }} />
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+                                    <step.icon className="w-4 h-4 text-gray-500" />
+                                </div>
+                                <h3 className="font-semibold text-base">{step.title}</h3>
                             </div>
-                            <h3 className="font-bold text-lg mb-2">{step.title}</h3>
                             <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* SVG Curved Lines */}
-                <div className="w-full h-48 relative">
+                {/* SVG Curved Lines - Organic, Hand-Drawn Style */}
+                <div className="w-full h-32 relative">
                     <svg
-                        viewBox="0 0 600 150"
+                        viewBox="0 0 600 120"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-full h-full"
                         preserveAspectRatio="xMidYMid meet"
                     >
-                        {/* Line 1 - Green (from left card) */}
+                        <defs>
+                            {/* Gradient for Lime line */}
+                            <linearGradient id="gradLime" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#acf350" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#acf350" stopOpacity="1" />
+                            </linearGradient>
+                            {/* Gradient for Blue line */}
+                            <linearGradient id="gradBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#60a5fa" stopOpacity="1" />
+                            </linearGradient>
+                            {/* Gradient for Orange line */}
+                            <linearGradient id="gradOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#f97316" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#f97316" stopOpacity="1" />
+                            </linearGradient>
+                            {/* Gradient for Teal line */}
+                            <linearGradient id="gradTeal" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.3" />
+                                <stop offset="100%" stopColor="#2dd4bf" stopOpacity="1" />
+                            </linearGradient>
+                        </defs>
+
+                        {/* Line 1 - Lime (from left card) - slightly wobbly */}
                         <motion.path
-                            d="M100 0 Q100 75 300 140"
-                            stroke="#acf350"
-                            strokeWidth="2"
+                            d="M100 0 C95 25, 115 50, 105 75 Q100 95, 300 115"
+                            stroke="url(#gradLime)"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
                             fill="none"
                             initial={{ pathLength: 0 }}
                             whileInView={{ pathLength: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            transition={{ duration: 1, ease: "easeOut" }}
                         />
-                        {/* Line 2 - Blue (from center card) */}
+                        {/* Line 2 - Blue (from center card - left curve) */}
                         <motion.path
-                            d="M300 0 Q300 75 300 140"
-                            stroke="#60a5fa"
-                            strokeWidth="2"
+                            d="M280 0 C275 30, 290 60, 285 90 Q282 105, 300 115"
+                            stroke="url(#gradBlue)"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
                             fill="none"
                             initial={{ pathLength: 0 }}
                             whileInView={{ pathLength: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
+                            transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
                         />
-                        {/* Line 3 - Orange (from right card) */}
+                        {/* Line 3 - Teal (from center card - right curve) */}
                         <motion.path
-                            d="M500 0 Q500 75 300 140"
-                            stroke="#f97316"
-                            strokeWidth="2"
+                            d="M320 0 C325 30, 310 60, 315 90 Q318 105, 300 115"
+                            stroke="url(#gradTeal)"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
                             fill="none"
                             initial={{ pathLength: 0 }}
                             whileInView={{ pathLength: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+                            transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
+                        />
+                        {/* Line 4 - Orange (from right card) */}
+                        <motion.path
+                            d="M500 0 C505 25, 485 50, 495 75 Q500 95, 300 115"
+                            stroke="url(#gradOrange)"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            fill="none"
+                            initial={{ pathLength: 0 }}
+                            whileInView={{ pathLength: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                         />
                         {/* Convergence Point */}
                         <motion.circle
                             cx="300"
-                            cy="140"
-                            r="6"
+                            cy="115"
+                            r="5"
                             fill="#acf350"
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: 1.2 }}
+                            transition={{ duration: 0.3, delay: 1 }}
                         />
                     </svg>
                 </div>
 
                 {/* Bottom CTA */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-center"
                 >
-                    <h3 className="text-3xl md:text-4xl font-bold mb-2">Meet Finlot.</h3>
-                    <p className="text-xl text-gray-600 mb-4">Your complete financial partner.</p>
-                    <p className="text-gray-400 max-w-xl mx-auto text-sm">
-                        Finlot is more than just a loan provider. It's a complete financial ecosystem
-                        that will scale with your needs. All the benefits of modern finance, with none of the hassle.
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Your Financial Partner, Finlot!</h3>
+                    <p className="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">
+                        From instant loans to comprehensive insurance, Finlot simplifies every financial decision.
+                        Experience seamless, technology-driven services tailored to your needs.
                     </p>
                 </motion.div>
 
