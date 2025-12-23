@@ -79,7 +79,7 @@ export function Footer() {
                             alt="Finlot"
                             width={400}
                             height={120}
-                            className="h-12 md:h-16 w-auto object-contain mb-6"
+                            className="h-20 md:h-40 w-auto object-contain mb-6"
                         />
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                             Your trusted partner for instant loans and comprehensive insurance solutions.
