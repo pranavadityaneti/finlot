@@ -15,16 +15,16 @@ export function CTASection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="max-w-5xl mx-auto"
+                className="max-w-6xl mx-auto"
             >
-                <div className="relative rounded-3xl overflow-hidden p-12 md:p-20 bg-gradient-to-br from-[#acf350] via-[#7cb82f] to-[#222222]">
+                <div className="relative rounded-3xl overflow-hidden p-8 md:p-12 bg-gradient-to-br from-[#acf350] via-[#7cb82f] to-[#222222]">
                     {/* Subtle overlay for depth */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
 
                     {/* Content - Center Aligned */}
                     <div className="relative z-10 flex flex-col items-center text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight">
-                            Start Your Financial <br /> Journey Today
+                        <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 leading-tight">
+                            Start Your Financial Journey Today
                         </h2>
                         <p className="text-black/70 text-lg mb-8 max-w-lg">
                             Join thousands of Indians who trust Finlot for their loans and insurance needs.
@@ -45,12 +45,6 @@ export function CTASection() {
 // --- Footer Section ---
 export function Footer() {
     const footerLinks = {
-        Products: [
-            { label: "Personal Loans", href: "/loans" },
-            { label: "Business Loans", href: "/loans" },
-            { label: "Health Insurance", href: "/insurance" },
-            { label: "Term Insurance", href: "/insurance" },
-        ],
         Company: [
             { label: "About Us", href: "/about" },
             { label: "Careers", href: "#" },
@@ -83,9 +77,9 @@ export function Footer() {
                         <Image
                             src="/finlot-logo.png"
                             alt="Finlot"
-                            width={160}
-                            height={50}
-                            className="h-12 w-auto mb-6"
+                            width={400}
+                            height={120}
+                            className="h-28 md:h-40 w-auto object-contain mb-6"
                         />
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                             Your trusted partner for instant loans and comprehensive insurance solutions.
