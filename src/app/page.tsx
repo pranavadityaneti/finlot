@@ -10,6 +10,7 @@ import { CursorGradient } from "@/components/ui/cursor-gradient"
 import { HamburgerMenu } from "@/components/ui/hamburger-menu"
 import { AboutSection } from "@/components/ui/about-section"
 import { StepsSection } from "@/components/ui/steps-section"
+import { SolutionsSection } from "@/components/ui/solutions-section"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -125,6 +126,9 @@ export default function Home() {
 
       {/* 3 Steps Section */}
       <StepsSection />
+
+      {/* Solutions Selection Section */}
+      <SolutionsSection />
 
     </main>
   )
