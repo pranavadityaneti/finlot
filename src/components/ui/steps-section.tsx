@@ -68,7 +68,6 @@ export const StepsSection = () => {
                     ))}
                 </div>
 
-                {/* Headline with Animated Highlighter */}
                 <motion.h2
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -77,13 +76,14 @@ export const StepsSection = () => {
                     className="text-3xl md:text-4xl font-medium text-center max-w-2xl leading-tight"
                 >
                     <span className="italic">Your loan journey,</span>{" "}
-                    <span className="relative inline-block px-2 font-bold not-italic">
+                    <span className="relative inline-block px-2 font-bold not-italic isolate">
                         <motion.span
                             initial={{ width: "0%" }}
                             whileInView={{ width: "100%" }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, ease: "circOut", delay: 0.3 }}
-                            className="absolute inset-0 top-1 bottom-1 bg-[#acf350] -z-10"
+                            className="absolute inset-0 top-1 bottom-1 bg-[#acf350]"
+                            style={{ zIndex: -1 }}
                         />
                         simplified.
                     </span>
