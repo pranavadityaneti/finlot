@@ -43,7 +43,7 @@ export const ContactForm = () => {
                 />
             </div>
 
-            <button className="mt-4 flex items-center justify-between w-full md:w-auto md:self-start bg-[#acf350] hover:bg-[#9de040] text-black font-bold py-4 px-8 rounded-full transition-all group">
+            <button className="mt-4 flex items-center justify-between w-full md:w-auto md:self-start bg-[#acf350] hover:bg-[#9de040] text-black font-bold py-4 px-8 transition-all group">
                 <span>Send Message</span>
                 <Send className="w-4 h-4 ml-4 group-hover:translate-x-1 transition-transform" />
             </button>

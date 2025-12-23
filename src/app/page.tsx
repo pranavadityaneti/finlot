@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* Right Aligned Actions */}
         <div className="flex items-center gap-4">
-          <button className="bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-md px-6 py-2.5 rounded-full text-sm font-medium transition-all hidden md:block">
+          <button className="bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-md px-6 py-2.5 text-sm font-medium transition-all hidden md:block">
             Sign In
           </button>
           <HamburgerMenu />
@@ -84,14 +84,14 @@ export default function Home() {
         {/* Buttons - Glassmorphic Style */}
         <div className="flex flex-col sm:flex-row gap-5 items-center">
           {/* Primary Glow Button */}
-          <button className="group relative px-8 py-4 bg-[#acf350] text-[#020804] font-bold rounded-full transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_#acf350]">
+          <button className="group relative px-8 py-4 bg-[#acf350] text-[#020804] font-bold transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_#acf350]">
             <span className="relative z-10 flex items-center gap-2">
               Get Started <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
 
           {/* Secondary Glass Button */}
-          <button className="px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-md text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+          <button className="px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-md text-white font-semibold hover:bg-white/10 transition-all">
             Learn More
           </button>
         </div>

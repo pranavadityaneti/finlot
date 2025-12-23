@@ -50,7 +50,7 @@ export default function LoansPage() {
                         From personal loans to business financing, get instant approval with minimal documentation.
                         Flexible EMIs, competitive rates, and funds disbursed within 24 hours.
                     </p>
-                    <button className="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-[#acf350] hover:text-black transition-all">
+                    <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-[#acf350] hover:text-black transition-all">
                         Apply Now
                     </button>
                 </motion.div>
@@ -114,7 +114,7 @@ export default function LoansPage() {
                     Apply for a loan in minutes. Our team will guide you through every step.
                 </p>
                 <Link href="/contact">
-                    <button className="bg-[#acf350] text-black px-8 py-4 rounded-full font-semibold hover:bg-white transition-all">
+                    <button className="bg-[#acf350] text-black px-8 py-4 font-semibold hover:bg-white transition-all">
                         Contact Us
                     </button>
                 </Link>
