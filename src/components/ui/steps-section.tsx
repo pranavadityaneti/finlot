@@ -46,19 +46,6 @@ export const StepsSection = () => {
 
     return (
         <section className="w-full bg-white text-black py-16 px-6 md:px-12 relative overflow-hidden">
-            {/* CSS for hover gradient effect */}
-            <style jsx>{`
-                .icon-hover {
-                    transition: all 0.3s ease;
-                }
-                .icon-hover:hover {
-                    color: transparent;
-                    background: linear-gradient(135deg, #acf350 0%, #222222 100%);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    transform: scale(1.1);
-                }
-            `}</style>
 
             <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
 
