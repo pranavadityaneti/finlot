@@ -27,7 +27,7 @@ export const SolutionsSection = () => {
     ]
 
     return (
-        <section className="w-full bg-white py-20 px-6 md:px-12">
+        <section className="w-full bg-[#020804] py-20 px-6 md:px-12 relative z-30">
             <div className="max-w-6xl mx-auto">
 
                 {/* Section Header */}
@@ -38,10 +38,10 @@ export const SolutionsSection = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                         Choose Your Path
                     </h2>
-                    <p className="text-gray-500 max-w-xl mx-auto">
+                    <p className="text-gray-400 max-w-xl mx-auto">
                         Whether you need funds to grow or protection to secure, we've got you covered.
                     </p>
                 </motion.div>
@@ -65,7 +65,7 @@ export const SolutionsSection = () => {
                                             <h3 className="text-2xl md:text-3xl font-bold text-black mb-2">
                                                 {solution.title}
                                             </h3>
-                                            <p className="text-lg text-[#acf350] font-medium mb-4">
+                                            <p className="text-lg text-gray-600 font-medium mb-4">
                                                 {solution.tagline}
                                             </p>
                                             <p className="text-gray-500 text-sm leading-relaxed">
