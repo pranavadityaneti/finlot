@@ -46,9 +46,23 @@ export const StepsSection = () => {
 
     return (
         <section className="w-full bg-white text-black py-16 px-6 md:px-12 relative overflow-hidden">
+            {/* CSS for hover gradient effect */}
+            <style jsx>{`
+                .icon-hover {
+                    transition: all 0.3s ease;
+                }
+                .icon-hover:hover {
+                    color: transparent;
+                    background: linear-gradient(135deg, #acf350 0%, #222222 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    transform: scale(1.1);
+                }
+            `}</style>
+
             <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
 
-                {/* De-clustered Icons - Spaced Horizontally */}
+                {/* De-clustered Icons with Hover Gradient */}
                 <div className="flex items-center justify-center gap-6 md:gap-10">
                     {floatingIcons.map((Icon, index) => (
                         <motion.div
@@ -57,8 +71,12 @@ export const StepsSection = () => {
                             whileInView={{ opacity: 0.5, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
+                            className="cursor-pointer"
                         >
-                            <Icon className="w-8 h-8 md:w-10 md:h-10 text-gray-300" strokeWidth={1} />
+                            <Icon
+                                className="w-8 h-8 md:w-10 md:h-10 text-gray-300 icon-hover"
+                                strokeWidth={1}
+                            />
                         </motion.div>
                     ))}
                 </div>
@@ -106,10 +124,10 @@ export const StepsSection = () => {
                     ))}
                 </div>
 
-                {/* SVG Curved Lines - V-Shape, Longer */}
-                <div className="w-full h-48 relative">
+                {/* SVG Curved Lines - V-Shape to Parallel */}
+                <div className="w-full h-56 relative">
                     <svg
-                        viewBox="0 0 600 180"
+                        viewBox="0 0 600 200"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-full h-full"
@@ -138,9 +156,9 @@ export const StepsSection = () => {
                             </linearGradient>
                         </defs>
 
-                        {/* Line 1 - Lime (from left card) - V-shape diagonal */}
+                        {/* Line 1 - Lime (from left card) - V then parallel */}
                         <motion.path
-                            d="M80 0 C90 40, 150 100, 300 170"
+                            d="M80 0 C100 30, 140 60, 200 90 Q220 105, 220 200"
                             stroke="url(#gradLime)"
                             strokeWidth="2.5"
                             strokeLinecap="round"
@@ -150,9 +168,9 @@ export const StepsSection = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
                         />
-                        {/* Line 2 - Blue (from center card - left) */}
+                        {/* Line 2 - Blue (from center card - left side, with spacing) */}
                         <motion.path
-                            d="M260 0 C265 50, 280 110, 300 170"
+                            d="M260 0 C265 30, 270 60, 270 90 Q270 105, 270 200"
                             stroke="url(#gradBlue)"
                             strokeWidth="2.5"
                             strokeLinecap="round"
@@ -162,9 +180,9 @@ export const StepsSection = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
                         />
-                        {/* Line 3 - Teal (from center card - right) */}
+                        {/* Line 3 - Teal (from center card - right side, with spacing) */}
                         <motion.path
-                            d="M340 0 C335 50, 320 110, 300 170"
+                            d="M340 0 C335 30, 330 60, 330 90 Q330 105, 330 200"
                             stroke="url(#gradTeal)"
                             strokeWidth="2.5"
                             strokeLinecap="round"
@@ -176,7 +194,7 @@ export const StepsSection = () => {
                         />
                         {/* Line 4 - Orange (from right card) */}
                         <motion.path
-                            d="M520 0 C510 40, 450 100, 300 170"
+                            d="M520 0 C500 30, 460 60, 400 90 Q380 105, 380 200"
                             stroke="url(#gradOrange)"
                             strokeWidth="2.5"
                             strokeLinecap="round"
@@ -185,17 +203,6 @@ export const StepsSection = () => {
                             whileInView={{ pathLength: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                        />
-                        {/* Convergence Point */}
-                        <motion.circle
-                            cx="300"
-                            cy="170"
-                            r="6"
-                            fill="#acf350"
-                            initial={{ scale: 0 }}
-                            whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.3, delay: 1.2 }}
                         />
                     </svg>
                 </div>
