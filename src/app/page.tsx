@@ -12,6 +12,7 @@ import { AboutSection } from "@/components/ui/about-section"
 import { StepsSection } from "@/components/ui/steps-section"
 import { SolutionsSection } from "@/components/ui/solutions-section"
 import { FeaturesSection } from "@/components/ui/features-section"
+import { TestimonialsSection } from "@/components/ui/testimonials-section"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -133,6 +134,9 @@ export default function Home() {
 
       {/* Features Bento Grid */}
       <FeaturesSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
     </main>
   )
