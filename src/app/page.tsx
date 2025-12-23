@@ -13,6 +13,7 @@ import { StepsSection } from "@/components/ui/steps-section"
 import { SolutionsSection } from "@/components/ui/solutions-section"
 import { FeaturesSection } from "@/components/ui/features-section"
 import { TestimonialsSection } from "@/components/ui/testimonials-section"
+import { CTASection, Footer } from "@/components/ui/footer"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -137,6 +138,12 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <TestimonialsSection />
+
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Footer */}
+      <Footer />
 
     </main>
   )
