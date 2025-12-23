@@ -33,16 +33,15 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      {/* Navigation */}
-      <nav className="relative z-50 p-6 max-w-7xl mx-auto w-full flex items-center justify-end h-48">
-        {/* Centered Large Logo */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <nav className="relative z-50 p-6 max-w-7xl mx-auto w-full flex items-center justify-between h-20">
+        {/* Logo */}
+        <div>
           <Image
             src="/finlot-logo.png"
             alt="Finlot"
-            width={400}
-            height={120}
-            className="h-20 md:h-40 w-auto object-contain"
+            width={200}
+            height={60}
+            className="h-10 md:h-14 w-auto object-contain"
             priority
           />
         </div>
