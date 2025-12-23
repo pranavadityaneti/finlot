@@ -22,7 +22,7 @@ export const AboutSection = () => {
                     {/* Headline */}
                     <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight leading-[0.95] max-w-xl">
                         We Translate <br />
-                        <span className="relative inline-block px-[5.5px]">
+                        <span className="relative inline-block px-[5.5px] whitespace-nowrap">
                             <motion.span
                                 initial={{ width: "0%" }}
                                 whileInView={{ width: "100%" }}
