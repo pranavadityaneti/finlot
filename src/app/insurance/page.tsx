@@ -50,7 +50,7 @@ export default function InsurancePage() {
                         Comprehensive coverage for health, vehicle, term life, and more.
                         Hassle-free claims, trusted partners, and policies tailored to your lifestyle.
                     </p>
-                    <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-[#acf350] hover:text-black transition-all">
+                    <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-[#acf350] hover:text-black transition-all rounded-full">
                         Get a Quote
                     </button>
                 </motion.div>
@@ -114,7 +114,7 @@ export default function InsurancePage() {
                     Get personalized insurance recommendations. Our advisors will help you find the perfect plan.
                 </p>
                 <Link href="/contact">
-                    <button className="bg-[#acf350] text-black px-8 py-4 font-semibold hover:bg-white transition-all">
+                    <button className="bg-[#acf350] text-black px-8 py-4 font-semibold hover:bg-white transition-all rounded-full">
                         Contact Us
                     </button>
                 </Link>

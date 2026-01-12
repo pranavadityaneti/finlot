@@ -30,7 +30,7 @@ export function CTASection() {
                             Join thousands of Indians who trust Finlot for their loans and insurance needs.
                         </p>
                         <Link href="/contact">
-                            <button className="group bg-black text-white px-8 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-2">
+                            <button className="group bg-black text-white px-8 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-2 rounded-full">
                                 Get Started
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
