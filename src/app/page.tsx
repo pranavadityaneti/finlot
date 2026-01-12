@@ -7,7 +7,7 @@ import Image from "next/image"
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid"
 import { FlipWords } from "@/components/ui/flip-words"
 import { CursorGradient } from "@/components/ui/cursor-gradient"
-import { HamburgerMenu } from "@/components/ui/hamburger-menu"
+import { Navbar } from "@/components/ui/navbar"
 import { AboutSection } from "@/components/ui/about-section"
 import { StepsSection } from "@/components/ui/steps-section"
 import { SolutionsSection } from "@/components/ui/solutions-section"
@@ -32,31 +32,7 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-[#acf350] opacity-5 blur-[100px] rounded-full pointer-events-none" />
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-50 p-6 max-w-7xl mx-auto w-full flex items-center justify-between h-20">
-        {/* Logo */}
-        <div>
-          <Image
-            src="/finlot-logo.png"
-            alt="Finlot"
-            width={200}
-            height={60}
-            className="h-10 md:h-14 w-auto object-contain"
-            priority
-          />
-        </div>
-
-        {/* Right Aligned Actions */}
-        <div className="flex items-center">
-          <div className="flex items-center gap-3 pl-6 pr-2 py-2 rounded-full bg-black/5 border border-black/10 backdrop-blur-md">
-            <button className="text-sm font-medium text-black hover:text-black/70 transition-colors hidden md:block">
-              Sign In
-            </button>
-            <div className="w-px h-4 bg-black/10 hidden md:block" />
-            <HamburgerMenu />
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-20 pb-32 px-4 text-center max-w-5xl mx-auto">
@@ -112,13 +88,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Logos (Placeholders with text for now, styled to look like logos) */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {['HDFC Bank', 'ICICI Lombard', 'Bajaj Finserv', 'Zerodha', 'Groww'].map((brand) => (
-              <div key={brand} className="flex items-center gap-2 text-lg font-bold text-white/80">
-                {/* Simple icon emulation */}
-                <div className="w-5 h-5 bg-current rounded-sm opacity-50" />
-                {brand}
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {[
+              { name: "HDFC Bank", src: "/partners/hdfc.png" },
+              { name: "ICICI Bank", src: "/partners/icici.png" },
+              { name: "IndusInd Bank", src: "/partners/indusind.png" },
+              { name: "IDFC First Bank", src: "/partners/idfc.png" },
+              { name: "Bank of India", src: "/partners/boi.png" }
+            ].map((logo) => (
+              <div key={logo.name} className="relative h-5 md:h-6 w-auto">
+                <img src={logo.src} alt={logo.name} className="h-full w-auto object-contain" />
               </div>
             ))}
           </div>

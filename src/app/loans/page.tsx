@@ -35,12 +35,7 @@ export default function LoansPage() {
         { title: "Loan Against Funds", icon: LineChart, description: "Liquidity from your investments.", shape: "graph" },
     ]
 
-    const loanTypes = [
-        { name: "Personal Loan", rate: "10.5% p.a.", amount: "Up to ₹25 Lakhs" },
-        { name: "Business Loan", rate: "12% p.a.", amount: "Up to ₹50 Lakhs" },
-        { name: "Home Loan", rate: "8.5% p.a.", amount: "Up to ₹5 Crores" },
-        { name: "Education Loan", rate: "9% p.a.", amount: "Up to ₹75 Lakhs" },
-    ]
+
 
     return (
         <main className="min-h-screen bg-white text-black font-sans selection:bg-[#acf350] selection:text-black">
@@ -216,33 +211,7 @@ export default function LoansPage() {
                 </div>
             </section>
 
-            {/* Loan Types */}
-            <section className="py-16 px-6 bg-gray-50">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-2xl font-bold text-center mb-12">Loan Options</h2>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        {loanTypes.map((loan, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="bg-white border border-gray-200 p-6 rounded-xl hover:border-[#acf350] transition-colors"
-                            >
-                                <h3 className="font-bold text-lg mb-2">{loan.name}</h3>
-                                <div className="flex justify-between text-sm">
-                                    <span className="text-gray-500">Interest Rate</span>
-                                    <span className="font-medium text-[#acf350]">{loan.rate}</span>
-                                </div>
-                                <div className="flex justify-between text-sm mt-1">
-                                    <span className="text-gray-500">Max Amount</span>
-                                    <span className="font-medium">{loan.amount}</span>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* FAQ Section */}
             <section className="py-24 px-6 bg-[#020804] text-white">
