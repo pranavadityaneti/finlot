@@ -18,12 +18,12 @@ import { cn } from "@/lib/utils"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-black relative flex flex-col overflow-hidden selection:bg-[#acf350] selection:text-black">
+    <main className="min-h-screen bg-[#020804] text-white relative flex flex-col overflow-hidden selection:bg-[#acf350] selection:text-black">
 
       {/* Background Ambience */}
       <div className="absolute inset-0 z-0">
         {/* Deep Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.05]" />
 
         {/* Cursor Follower Gradient */}
         <CursorGradient />
@@ -32,20 +32,20 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-[#acf350] opacity-5 blur-[100px] rounded-full pointer-events-none" />
       </div>
 
-      <Navbar />
+      <Navbar theme="dark" />
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-20 pb-32 px-4 text-center max-w-5xl mx-auto">
 
         {/* Top Pill / Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/10 backdrop-blur-md text-xs font-medium text-gray-600 mb-8 hover:bg-black/10 transition-colors cursor-pointer">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-medium text-gray-300 mb-8 hover:bg-white/10 transition-colors cursor-pointer">
           <span className="px-1.5 py-0.5 rounded-full bg-[#acf350] text-[#020804] text-[10px] font-bold">NEW</span>
           <span>Welcome to the future of finance</span>
           <ArrowRight className="w-3 h-3" />
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-black mb-6 leading-[1.1]">
+        <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
           Financial Growth. <br />
           <FlipWords
             words={["Simplified.", "Accelerated.", "Secure.", "Automated.", "Empowered."]}
@@ -54,7 +54,7 @@ export default function Home() {
         </h1>
 
         {/* Subtext */}
-        <p className="max-w-2xl text-lg text-gray-600 mb-10 leading-relaxed">
+        <p className="max-w-2xl text-lg text-gray-400 mb-10 leading-relaxed">
           Boost your financial health with instant loans and comprehensive insurance.
           Unlock data-driven insights with our advanced AI solutions.
         </p>

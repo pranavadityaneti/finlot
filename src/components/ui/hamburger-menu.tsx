@@ -6,8 +6,13 @@ import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
-export const HamburgerMenu = () => {
+interface HamburgerMenuProps {
+    theme?: "light" | "dark"
+}
+
+export const HamburgerMenu = ({ theme = "light" }: HamburgerMenuProps) => {
     const [isOpen, setIsOpen] = useState(false)
+    const isDark = theme === "dark"
 
     const menuItems = [
         { label: "Home", href: "/" },
@@ -23,9 +28,15 @@ export const HamburgerMenu = () => {
             {/* Trigger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-full hover:bg-black/5 transition-colors"
+                className={cn(
+                    "p-2 rounded-full transition-colors",
+                    isDark ? "hover:bg-white/10" : "hover:bg-black/5"
+                )}
             >
-                <Menu className="w-5 h-5 text-black" />
+                <Menu className={cn(
+                    "w-5 h-5",
+                    isDark ? "text-white" : "text-black"
+                )} />
             </button>
 
             {/* Dropdown Menu */}
